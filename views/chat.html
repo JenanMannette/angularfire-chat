@@ -1,7 +1,9 @@
 <div ng-repeat="post in chatLogs">
     <img ng-src="{{post.url}}" alt="avatar"/>
     <h4>{{post.username}}</h4><br>
-    <p>{{post.message}}</p>
+    <p ng-click="editPost()" ng-show="boolean">{{post.message}}</p>
+    <input type="text" ng-model="post.message" ng-hide="boolean" ng-change="chatLogs.$save(post)"/>
+    <button ng-hide="boolean" ng-click="updatePost()">Update</button>
     <input type="submit" ng-click="removePost(post)" value="Delete"/>
 </div>
 
