@@ -1,0 +1,19 @@
+<div ng-repeat="post in chatLogs">
+    <img ng-src="{{post.url}}" alt="avatar"/>
+    <h4>{{post.username}}</h4><br>
+    <p>{{post.message}}</p>
+    <input type="submit" ng-click="removePost(post)" value="Delete"/>
+</div>
+
+<form ng-submit="submitPost()">
+    <label for="name">User Name:</label>
+    <input type="text" id="name" ng-model="username"/>
+
+    <label for="url">URL:</label>
+    <input type="text" id="url"ng-model="url"/>
+
+    <label for="message">Message:</label>
+    <input type="text" id="message" ng-model="message"/>
+
+    <input type="submit" value="SEND!"/>
+</form>
